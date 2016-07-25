@@ -1,0 +1,11 @@
+#en_US.lang File
+
+#CONFIG GUI
+gui.mobsettings.config.title=Mob Settings Configuration
+
+
+#CONSOLE LOG -- As part of console output, these entries shall not be translated. --
+info.mobsettings.console.config.refresh=Refreshing configuration file
+info.mobsettings.console.load.preInit=Begin Pre-initialization
+info.mobsettings.console.load.init=Begin Initialization
+info.mobsettings.console.load.postInit=Begin Post-initialization
