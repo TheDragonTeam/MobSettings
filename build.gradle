@@ -22,7 +22,7 @@ plugins {
 }
 */
 
-version = mc_version + '-' + version_major + '.' + version_api + '.' + version_minor + '.' + version_patch
+version = mc_version + '-' + version_major + '.' + version_minor + '.' + version_patch
 group = package_group
 archivesBaseName = mod_id
 

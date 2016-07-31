@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.util.Random;
 
-import static net.thedragonteam.mobsettings.resources.ConfigHandler.*;
+import static net.thedragonteam.mobsettings.MSConfig.*;
 
 /**
  * Created by sokratis1GR on 4/4/2016.

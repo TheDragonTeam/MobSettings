@@ -9,7 +9,6 @@ public class GlobalEventsMobSettings {
 
     @SubscribeEvent
     public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
-        ConfigHandler.syncConfig();
         MobSettings.logger.info(TextHelper.localize("info." + MobSettings.MODID + ".console.config.refresh"));
     }
 }
