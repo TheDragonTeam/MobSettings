@@ -4,7 +4,5 @@
 
 package net.thedragonteam.mobsettings.proxy;
 
-public class ClientProxy extends CommonProxy {
+public class ServerProxy extends CommonProxy {
 }
-
-

@@ -1,23 +1,18 @@
+/*
+ * Copyright (c) TheDragonTeam 2016.
+ */
+
 package net.thedragonteam.mobsettings.proxy;
 
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.thedragonteam.mobsettings.registry.MobDrops;
+import net.thedragonteam.thedragonlib.util.LogHelper;
+
 public class CommonProxy {
-    public void loadCommands() {
-
-    }
-
-    public void loadRenders() {
-
-    }
-
-    public void addChatMessage(String string) {
-    }
-
-    /**
-     * Sends a message to the client that gets replaced when the same messages are sent again. This reduces the amount of chat spam players end up with when checking things repeatedly.
-     *
-     * @param string - String message to send to player
-     * @param id     - An ID for the message. Gets replaced by any other message that uses the same ID.
-     */
-    public void addChatMessage(String string, int id) {
+    public void preInit(FMLPreInitializationEvent event) {
+        LogHelper.info("Begin PreInitialization");
+        MinecraftForge.EVENT_BUS.register(new MobDrops());
+        LogHelper.info("Finished PreInitialization");
     }
 }

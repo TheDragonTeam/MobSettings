@@ -1,16 +1,18 @@
 [
-{
-  "modid": "mobsettings",
-  "name": "Mob Settings",
-  "description": "Mob Settings allows you to customize the mobs settings",
-  "version": "1.1.0",
-  "mcversion": "1.10.2",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["sokratis12GR, Mortiz30"],
-  "credits": "",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
+  {
+    "modid": "mobsettings",
+    "name": "Mob Settings",
+    "description": "Mob Settings allows you to customize the mobs settings",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://minecraft.curseforge.com/projects/mob-settings",
+    "updateUrl": "",
+    "authorList": [
+      "sokratis12GR and Moritz30 in Association with TheDragonTeam"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
 ]
