@@ -17,15 +17,14 @@ import java.util.List;
 
 public class ConfigGui extends GuiConfig {
     public ConfigGui(GuiScreen parentScreen) {
-        super(parentScreen, getConfigElements(parentScreen), Reference.MODID, true, true,
+        super(parentScreen, getConfigElements(parentScreen), Reference.MODID, true, false,
                 TextHelper.localize("gui." + Reference.MODID + ".config.title"));
     }
 
     private static List<IConfigElement> getConfigElements(GuiScreen parent) {
         List<IConfigElement> list = new ArrayList<IConfigElement>();
 
-        /** adds sections declared in ConfigHandler. toLowerCase() is used because the configuration class automatically does this, so must we. */
-        list.add(new ConfigElement(MobSettings.configuration.getCategory("Debug".toLowerCase())));
+        /* adds sections declared in ConfigHandler. toLowerCase() is used because the configuration class automatically does this, so must we. */
         list.add(new ConfigElement(MobSettings.configuration.getCategory("Mobs".toLowerCase())));
 
         return list;
