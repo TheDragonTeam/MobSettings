@@ -7,7 +7,7 @@ package net.thedragonteam.mobsettings;
 public class Reference {
 
     public static final String MODID = "mobsettings";
-    public static final String VERSION = "1.11-1.3.0";
+    public static final String VERSION = "1.10.2-1.3.0";
     public static final String MODNAME = "Mobs Settings";
     public static final String LIB_VERSION = "1.10.2-1.0.3.0";
     public static final String UPDATE_JSON = "http://fdn.redstone.tech/TheDragonTeam/mobsettings/update.json";
