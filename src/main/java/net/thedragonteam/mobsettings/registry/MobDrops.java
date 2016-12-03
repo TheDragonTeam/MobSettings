@@ -1,177 +1,121 @@
 /*
- * Copyright (c) TheDragonTeam 2016.
+ * Copyright (c) TheDragonTeam 2006.
  */
 
 package net.thedragonteam.mobsettings.registry;
 
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.boss.EntityWither;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.*;
-import net.minecraft.item.Item;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import static net.thedragonteam.mobsettings.MSConfig.*;
+import static net.thedragonteam.mobsettings.utils.ItemStackUtils.getItem;
 
 public class MobDrops {
+
     @SubscribeEvent
     public void playerKilledEntity(LivingDropsEvent event) {
-        if (event.getEntity() instanceof EntityCreeper) {
-            EntityItem entityItem = event.getEntityLiving().dropItem(Item.getByNameOrId(creeperMobDrops), creeperAmountMobDrops);
-            if (debugMode)
-                System.out.println(creeperMobDrops + " x " + creeperAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntitySkeleton) {
-            EntityItem entityItem1 = event.getEntityLiving().dropItem(Item.getByNameOrId(skeletonMobDrops), skeletonAmountMobDrops);
-            if (debugMode)
-                System.out.println(skeletonMobDrops + " x " + skeletonAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntitySpider) {
-            EntityItem entityItem2 = event.getEntityLiving().dropItem(Item.getByNameOrId(spiderMobDrops), spiderAmountMobDrops);
-            if (debugMode)
-                System.out.println(spiderMobDrops + " x " + spiderAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityZombie) {
-            EntityItem entityItem3 = event.getEntityLiving().dropItem(Item.getByNameOrId(zombieMobDrops), zombieAmountMobDrops);
-            if (debugMode)
-                System.out.println(zombieMobDrops + " x " + zombieAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntitySlime) {
-            EntityItem entityItem4 = event.getEntityLiving().dropItem(Item.getByNameOrId(slimeMobDrops), slimeAmountMobDrops);
-            if (debugMode)
-                System.out.println(slimeMobDrops + " x " + slimeAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityGhast) {
-            EntityItem entityItem5 = event.getEntityLiving().dropItem(Item.getByNameOrId(ghastMobDrops), ghastAmountMobDrops);
-            if (debugMode)
-                System.out.println(ghastMobDrops + " x " + ghastAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityPigZombie) {
-            EntityItem entityItem6 = event.getEntityLiving().dropItem(Item.getByNameOrId(pigZombieMobDrops), pigZombieAmountMobDrops);
-            if (debugMode)
-                System.out.println(pigZombieMobDrops + " x " + pigZombieAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityEnderman) {
-            EntityItem entityItem7 = event.getEntityLiving().dropItem(Item.getByNameOrId(endermanMobDrops), endermanAmountMobDrops);
-            if (debugMode)
-                System.out.println(endermanMobDrops + " x " + endermanAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityCaveSpider) {
-            EntityItem entityItem8 = event.getEntityLiving().dropItem(Item.getByNameOrId(caveSpiderMobDrops), caveSpiderAmountMobDrops);
-            if (debugMode)
-                System.out.println(caveSpiderMobDrops + " x " + caveSpiderAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntitySilverfish) {
-            EntityItem entityItem9 = event.getEntityLiving().dropItem(Item.getByNameOrId(silverfishMobDrops), silverfishAmountMobDrops);
-            if (debugMode)
-                System.out.println(silverfishMobDrops + " x " + silverfishAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityBlaze) {
-            EntityItem entityItem10 = event.getEntityLiving().dropItem(Item.getByNameOrId(blazeMobDrops), blazeAmountMobDrops);
-            if (debugMode)
-                System.out.println(blazeMobDrops + " x " + blazeAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityMagmaCube) {
-            EntityItem entityItem11 = event.getEntityLiving().dropItem(Item.getByNameOrId(magmaCubeMobDrops), magmaCubeAmountMobDrops);
-            if (debugMode)
-                System.out.println(magmaCubeMobDrops + " x " + magmaCubeAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityBat) {
-            EntityItem entityItem12 = event.getEntityLiving().dropItem(Item.getByNameOrId(batMobDrops), batAmountMobDrops);
-            if (debugMode)
-                System.out.println(batMobDrops + " x " + batAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityWitch) {
-            EntityItem entityItem13 = event.getEntityLiving().dropItem(Item.getByNameOrId(witchMobDrops), witchAmountMobDrops);
-            if (debugMode)
-                System.out.println(witchMobDrops + " x " + witchAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityEndermite) {
-            EntityItem entityItem14 = event.getEntityLiving().dropItem(Item.getByNameOrId(endermiteMobDrops), endermiteAmountMobDrops);
-            if (debugMode)
-                System.out.println(endermiteMobDrops + " x " + endermiteAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityGuardian && !((EntityGuardian) event.getEntity()).isElder()) {
-            EntityItem entityItem15 = event.getEntityLiving().dropItem(Item.getByNameOrId(guardianMobDrops), guardianAmountMobDrops);
-            if (debugMode)
-                System.out.println(guardianMobDrops + " x " + guardianAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityShulker) {
-            EntityItem entityItem16 = event.getEntityLiving().dropItem(Item.getByNameOrId(shulkerMobDrops), shulkerAmountMobDrops);
-            if (debugMode)
-                System.out.println(shulkerMobDrops + " x " + shulkerAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityPig) {
-            EntityItem entityItem17 = event.getEntityLiving().dropItem(Item.getByNameOrId(pigMobDrops), pigAmountMobDrops);
-            if (debugMode)
-                System.out.println(pigMobDrops + " x " + pigAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntitySheep) {
-            EntityItem entityItem18 = event.getEntityLiving().dropItem(Item.getByNameOrId(sheepMobDrops), sheepAmountMobDrops);
-            if (debugMode)
-                System.out.println(sheepMobDrops + " x " + sheepAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityCow) {
-            EntityItem entityItem19 = event.getEntityLiving().dropItem(Item.getByNameOrId(cowMobDrops), cowAmountMobDrops);
-            if (debugMode)
-                System.out.println(cowMobDrops + " x " + cowAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityChicken) {
-            EntityItem entityItem20 = event.getEntityLiving().dropItem(Item.getByNameOrId(chickenMobDrops), chickenAmountMobDrops);
-            if (debugMode)
-                System.out.println(chickenMobDrops + " x " + chickenAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntitySquid) {
-            EntityItem entityItem21 = event.getEntityLiving().dropItem(Item.getByNameOrId(squidMobDrops), squidAmountMobDrops);
-            if (debugMode)
-                System.out.println(squidMobDrops + " x " + squidAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityWolf) {
-            EntityItem entityItem22 = event.getEntityLiving().dropItem(Item.getByNameOrId(wolfMobDrops), wolfAmountMobDrops);
-            if (debugMode)
-                System.out.println(wolfMobDrops + " x " + wolfAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityMooshroom) {
-            EntityItem entityItem23 = event.getEntityLiving().dropItem(Item.getByNameOrId(mooshroomCowMobDrops), mooshroomCowAmountMobDrops);
-            if (debugMode)
-                System.out.println(mooshroomCowMobDrops + " x " + mooshroomCowAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityOcelot) {
-            EntityItem entityItem24 = event.getEntityLiving().dropItem(Item.getByNameOrId(ocelotMobDrops), ocelotAmountMobDrops);
-            if (debugMode)
-                System.out.println(ocelotMobDrops + " x " + ocelotAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityHorse) {
-            EntityItem entityItem25 = event.getEntityLiving().dropItem(Item.getByNameOrId(horseMobDrops), horseAmountMobDrops);
-            if (debugMode)
-                System.out.println(horseMobDrops + " x " + horseAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityRabbit) {
-            EntityItem entityItem26 = event.getEntityLiving().dropItem(Item.getByNameOrId(rabbitMobDrops), rabbitAmountMobDrops);
-            if (debugMode)
-                System.out.println(rabbitMobDrops + " x " + rabbitAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityVillager) {
-            EntityItem entityItem27 = event.getEntityLiving().dropItem(Item.getByNameOrId(villagerMobDrops), villagerAmountMobDrops);
-            if (debugMode)
-                System.out.println(villagerMobDrops + " x " + villagerAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityDragon) {
-            EntityItem entityItem28 = event.getEntityLiving().dropItem(Item.getByNameOrId(enderDragonMobDrops), enderDragonAmountMobDrops);
-            if (debugMode)
-                System.out.println(enderDragonMobDrops + " x " + enderDragonAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityWither) {
-            EntityItem entityItem29 = event.getEntityLiving().dropItem(Item.getByNameOrId(witherBossMobDrops), witherBossAmountMobDrops);
-            if (debugMode)
-                System.out.println(witherBossMobDrops + " x " + witherBossAmountMobDrops);
-        }
-        if (event.getEntity() instanceof EntityGuardian && ((EntityGuardian) event.getEntity()).isElder()) {
-            EntityItem entityItem30 = event.getEntityLiving().dropItem(Item.getByNameOrId(elderGuardianMobDrops), elderGuardianAmountMobDrops);
-            if (debugMode)
-                System.out.println(elderGuardianMobDrops + " x " + elderGuardianAmountMobDrops);
-        }
+        if (event.getEntity() instanceof EntityCreeper)
+            for (int i = 0; i <= (creeperNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(creeperMobDrops[i]), creeperAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntitySkeleton)
+            for (int i = 0; i <= (skeletonNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(skeletonMobDrops[i]), skeletonAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntitySpider)
+            for (int i = 0; i <= (spiderNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(spiderMobDrops[i]), spiderAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityZombie)
+            for (int i = 0; i <= (zombieNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(zombieMobDrops[i]), zombieAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntitySlime)
+            for (int i = 0; i <= (slimeNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(slimeMobDrops[i]), slimeAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityGhast)
+            for (int i = 0; i <= (ghastNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(ghastMobDrops[i]), ghastAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityPigZombie)
+            for (int i = 0; i <= (pigZombieNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(pigZombieMobDrops[i]), pigZombieAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityEnderman)
+            for (int i = 0; i <= (endermanNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(endermanMobDrops[i]), endermanAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityCaveSpider)
+            for (int i = 0; i <= (caveSpiderNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(caveSpiderMobDrops[i]), caveSpiderAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntitySilverfish)
+            for (int i = 0; i <= (silverfishNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(silverfishMobDrops[i]), silverfishAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityBlaze)
+            for (int i = 0; i <= (blazeNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(blazeMobDrops[i]), blazeAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityMagmaCube)
+            for (int i = 0; i <= (magmaCubeNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(magmaCubeMobDrops[i]), magmaCubeAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityBat)
+            for (int i = 0; i <= (batNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(batMobDrops[i]), batAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityWitch)
+            for (int i = 0; i <= (witchNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(witchMobDrops[i]), witchAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityEndermite)
+            for (int i = 0; i <= (endermiteNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(endermiteMobDrops[i]), endermiteAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityGuardian)
+            for (int i = 0; i <= (guardianNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(guardianMobDrops[i]), guardianAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityShulker)
+            for (int i = 0; i <= (shulkerNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(shulkerMobDrops[i]), shulkerAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityPig)
+            for (int i = 0; i <= (pigNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(pigMobDrops[i]), pigAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntitySheep)
+            for (int i = 0; i <= (sheepNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(sheepMobDrops[i]), sheepAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityCow)
+            for (int i = 0; i <= (cowNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(cowMobDrops[i]), cowAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityChicken)
+            for (int i = 0; i <= (chickenNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(chickenMobDrops[i]), chickenAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntitySquid)
+            for (int i = 0; i <= (squidNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(squidMobDrops[i]), squidAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityWolf)
+            for (int i = 0; i <= (wolfNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(wolfMobDrops[i]), wolfAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityMooshroom)
+            for (int i = 0; i <= (mooshroomNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(mooshroomCowMobDrops[i]), mooshroomCowAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityOcelot)
+            for (int i = 0; i <= (ocelotNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(ocelotMobDrops[i]), ocelotAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityHorse)
+            for (int i = 0; i <= (horseNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(horseMobDrops[i]), horseAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityRabbit)
+            for (int i = 0; i <= (rabbitNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(rabbitMobDrops[i]), rabbitAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityVillager)
+            for (int i = 0; i <= (villagerNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(villagerMobDrops[i]), villagerAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityDragon)
+            for (int i = 0; i <= (enderDragonNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(enderDragonMobDrops[i]), enderDragonAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityWither)
+            for (int i = 0; i <= (witherBossNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(witherBossMobDrops[i]), witherBossAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityGuardian && ((EntityGuardian) event.getEntity()).isElder())
+            for (int i = 0; i <= (elderGuardianNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(elderGuardianMobDrops[i]), elderGuardianAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntityPolarBear)
+            for (int i = 0; i <= (polarBearNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(polarBearMobDrops[i]), polarBearAmountMobDrops[i]);
+        if (event.getEntity() instanceof EntitySkeleton && ((EntitySkeleton) event.getEntity()).getSkeletonType() == SkeletonType.WITHER)
+            for (int i = 0; i <= (witherSkeletonNumberOfDrops - 1); i++)
+                event.getEntityLiving().dropItem(getItem(witherSkeletonMobDrops[i]), witherSkeletonAmountMobDrops[i]);
     }
 }

@@ -11,7 +11,6 @@ import net.thedragonteam.thedragonlib.util.LogHelper;
 
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
-        LogHelper.info("Begin PreInitialization");
         MinecraftForge.EVENT_BUS.register(new MobDrops());
         LogHelper.info("Finished PreInitialization");
     }
