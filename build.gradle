@@ -15,13 +15,6 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'maven'
 
-/*
-// for people who want stable - not yet functional for MC 1.8.8 - we require the forgegradle 2.1 snapshot
-plugins {
-    id "net.minecraftforge.gradle.forge" version "2.0.2"
-}
-*/
-
 version = mc_version + '-' + version_major + '.' + version_minor + '.' + version_patch
 group = package_group
 archivesBaseName = mod_id
@@ -35,6 +28,9 @@ minecraft {
     if (project.hasProperty('mappings_version'))
         mappings = project.mappings_version
 }
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 jar {
     classifier = ''
