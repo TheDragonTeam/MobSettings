@@ -17,6 +17,32 @@ import static net.thedragonteam.mobsettings.MSConfig.*;
 
 public class MobSpawns {
 
+    //TODO replace all of the individual loops with a tweaked one.
+    private static final int[] SPAWN_AMOUNTS = new int[]{
+            creeperNumberOfAddedSpawns, skeletonNumberOfAddedSpawns,
+            spiderNumberOfAddedSpawns, zombieNumberOfAddedSpawns,
+            slimeNumberOfAddedSpawns, ghastNumberOfAddedSpawns,
+            pigZombieNumberOfAddedSpawns, endermanNumberOfAddedSpawns,
+            caveSpiderNumberOfAddedSpawns, silverfishNumberOfAddedSpawns,
+            blazeNumberOfAddedSpawns, magmaCubeNumberOfAddedSpawns,
+            batNumberOfAddedSpawns, witchNumberOfAddedSpawns,
+            endermiteNumberOfAddedSpawns, guardianNumberOfAddedSpawns,
+            shulkerNumberOfAddedSpawns, pigNumberOfAddedSpawns,
+            sheepNumberOfAddedSpawns, cowNumberOfAddedSpawns,
+            chickenNumberOfAddedSpawns, squidNumberOfAddedSpawns,
+            wolfNumberOfAddedSpawns, mooshroomCowNumberOfAddedSpawns,
+            ocelotNumberOfAddedSpawns, horseNumberOfAddedSpawns,
+            rabbitNumberOfAddedSpawns, villagerNumberOfAddedSpawns,
+            enderDragonNumberOfAddedSpawns, witherBossNumberOfAddedSpawns,
+            elderGuardianNumberOfAddedSpawns, evokerNumberOfAddedSpawns,
+            polarBearNumberOfAddedSpawns, vexNumberOfAddedSpawns,
+            strayNumberOfAddedSpawns, vindicatorNumberOfAddedSpawns,
+            witherSkeletonNumberOfAddedSpawns, huskNumberOfAddedSpawns,
+            llamaNumberOfAddedSpawns, skeletonHorseNumberOfAddedSpawns,
+            zombieHorseNumberOfAddedSpawns, ironGolemNumberOfAddedSpawns,
+            snowGolemNumberOfAddedSpawns
+    };
+
     public static void addMobSpawns() {
         for (int i = 0; i <= (creeperNumberOfAddedSpawns - 1); i++)
             addSpawn(EntityCreeper.class, creeperWeightedProbs[i], creeperMinSpawns[i], creeperMaxSpawns[i], MONSTER, getBiome(creeperAddedSpawnBiomeIDs[i]));
