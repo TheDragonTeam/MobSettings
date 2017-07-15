@@ -1,6 +1,5 @@
-
-// For those who want the bleeding edge
 buildscript {
+    ext.kotlin_version = '1.1.2-5'
     repositories {
         jcenter()
         maven {
@@ -9,11 +8,29 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
+
+plugins {
+    id "com.matthewprenger.cursegradle" version "1.0.9"
+}
+
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'maven'
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+apply plugin: "com.matthewprenger.cursegradle"
+apply plugin: 'kotlin'
+
+repositories {
+    jcenter()
+    maven {
+        name 'shadowfacts'
+        url 'http://mvn.rx14.co.uk/shadowfacts/'
+    }
+}
 
 version = mc_version + '-' + version_major + '.' + version_minor + '.' + version_patch
 group = package_group
@@ -22,8 +39,8 @@ archivesBaseName = mod_id
 minecraft {
     version = "${mc_version}-${forge_version}"
     runDir = "run"
-    makeObfSourceJar = true
-    useDepAts = true
+    makeObfSourceJar = false
+    useDepAts = false
 
     if (project.hasProperty('mappings_version'))
         mappings = project.mappings_version
@@ -31,6 +48,7 @@ minecraft {
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
 
 jar {
     classifier = ''
@@ -42,15 +60,10 @@ jar {
     )
 }
 
-task sourcesJar(type: Jar) {
-    from sourceSets.main.allJava
-    classifier = 'sources'
-}
-
 artifacts {
-    archives sourcesJar
 }
 
+//noinspection GroovyAssignabilityCheck
 processResources {
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
@@ -68,9 +81,14 @@ processResources {
     }
 }
 
+//noinspection GroovyAssignabilityCheck
 dependencies {
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile group: "net.shadowfacts", name: "Forgelin", version: '1.5.0'
 }
 
+//noinspection GroovyAssignabilityCheck
 processResources
 {
     // this will ensure that this task is redone when the versions change.
@@ -88,5 +106,19 @@ processResources
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
+    }
+}
+
+curseforge {
+    apiKey = project.hasProperty('api_token') ? project.api_token : '0'
+    project {
+        id = '247819'
+        changelog = file('src/main/resources/changelog.md')
+        changelogType = 'markdown'
+        releaseType = 'release'
+        relations {
+            requiredLibrary 'thedragonlib'
+            requiredLibrary 'shadowfacts-forgelin'
+        }
     }
 }

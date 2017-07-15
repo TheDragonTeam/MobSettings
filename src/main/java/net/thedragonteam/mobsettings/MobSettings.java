@@ -13,10 +13,15 @@ import net.thedragonteam.mobsettings.proxy.CommonProxy;
 import net.thedragonteam.thedragonlib.config.ModConfigProcessor;
 import net.thedragonteam.thedragonlib.util.LogHelper;
 
-@Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION, guiFactory = Reference.GUIFACTORY, dependencies = Reference.DEPEND, updateJSON = Reference.UPDATE_JSON)
+@Mod(modid = Reference.MODID,
+        name = Reference.MODNAME,
+        version = Reference.VERSION,
+        guiFactory = Reference.GUI_FACTORY,
+        dependencies = Reference.DEPEND,
+        updateJSON = Reference.UPDATE_JSON)
 public class MobSettings {
 
-    @SidedProxy(clientSide = Reference.CLIENTPROXY, serverSide = Reference.SEVERPROXY)
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.SEVER_PROXY)
     public static CommonProxy proxy;
     public static ModConfigProcessor configProcessor = new ModConfigProcessor();
     public static Configuration configuration;
@@ -25,7 +30,7 @@ public class MobSettings {
     public static MobSettings instance;
 
     public MobSettings() {
-        LogHelper.info("Welcoming Minecraft");
+        LogHelper.getLogger(Reference.MODID).info("Welcoming Minecraft");
     }
 
     @EventHandler
